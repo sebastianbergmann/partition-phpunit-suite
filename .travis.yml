@@ -1,0 +1,23 @@
+language: php
+
+sudo: false
+
+php:
+  - 7.1
+  - 7.1snapshot
+  - master
+
+before_install:
+  - composer self-update
+  - composer clear-cache
+  - wget https://phar.phpunit.de/phpunit-6.phar
+
+install:
+  - travis_retry composer update --no-interaction --no-ansi --no-progress --no-suggest
+
+script:
+  - php phpunit.phar
+
+notifications:
+  email: false
+

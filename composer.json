@@ -1,0 +1,46 @@
+{
+  "name": "sebastian/partition-phpunit-suite",
+  "description": "A tool for creating build scripts for executing PHPUnit test suites in parallel",
+  "homepage": "https://github.com/sebastianbergmann/partition-phpunit-suite",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Sebastian Bergmann",
+      "email": "sebastian@phpunit.de",
+      "role": "lead"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/sebastianbergmann/partition-phpunit-suite/issues"
+  },
+  "prefer-stable": true,
+  "config": {
+    "platform": {
+      "php": "7.1.0"
+    },
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "require": {
+    "php": "^7.1",
+    "sebastian/finder-facade": "^1.2.1",
+    "sebastian/version": "^2.0.1",
+    "symfony/console": "^3.3"
+  },
+  "require-dev": {
+    "mikey179/vfsStream": "^1.6.5"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "bin": [
+    "partition-phpunit-suite"
+  ],
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
