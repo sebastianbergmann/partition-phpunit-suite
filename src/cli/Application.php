@@ -23,44 +23,9 @@ class Application extends AbstractApplication
         $version = new Version('1.0', \dirname(__DIR__, 2));
 
         parent::__construct('partition-phpunit-suite', $version->getVersion());
-    }
 
-    /**
-     * Gets the name of the command based on input.
-     *
-     * @param InputInterface $input The input interface
-     *
-     * @return string The command name
-     */
-    protected function getCommandName(InputInterface $input)
-    {
-        return 'partition-phpunit-suite';
-    }
-
-    /**
-     * Gets the default commands that should always be available.
-     *
-     * @return array An array of default Command instances
-     */
-    protected function getDefaultCommands()
-    {
-        $defaultCommands = parent::getDefaultCommands();
-
-        $defaultCommands[] = new Command;
-
-        return $defaultCommands;
-    }
-
-    /**
-     * Overridden so that the application doesn't expect the command
-     * name to be the first argument.
-     */
-    public function getDefinition()
-    {
-        $inputDefinition = parent::getDefinition();
-        $inputDefinition->setArguments();
-
-        return $inputDefinition;
+        $this->add(new GenerateBuildXmlCommand);
+        $this->add(new GenerateMakefileCommand);
     }
 
     /**
@@ -85,10 +50,6 @@ class Application extends AbstractApplication
         if ($input->hasParameterOption('--version') ||
             $input->hasParameterOption('-V')) {
             exit;
-        }
-
-        if (!$input->getFirstArgument()) {
-            $input = new ArrayInput(['--help']);
         }
 
         parent::doRun($input, $output);
