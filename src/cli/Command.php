@@ -30,11 +30,7 @@ class Command extends AbstractCommand
              ->setDefinition(
                  [
                    new InputArgument(
-                       'test-list',
-                       InputArgument::REQUIRED
-                   ),
-                   new InputArgument(
-                       'group-list',
+                       'test-xml',
                        InputArgument::REQUIRED
                    ),
                    new InputArgument(
@@ -73,20 +69,11 @@ class Command extends AbstractCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        if (!$tests = @\file($input->getArgument('test-list'))) {
+        if (!file_exists($input->getArgument('test-xml'))) {
             throw new RuntimeException(
                 \sprintf(
-                    'Could not read test list from file "%s"',
-                    $input->getArgument('test-list')
-                )
-            );
-        }
-
-        if (!$groups = @\file($input->getArgument('group-list'))) {
-            throw new RuntimeException(
-                \sprintf(
-                    'Could not read group list from file "%s"',
-                    $input->getArgument('group-list')
+                    'File "%s" does not exist',
+                    $input->getArgument('test-xml')
                 )
             );
         }
@@ -96,8 +83,6 @@ class Command extends AbstractCommand
 
             $writer->write(
                 $input->getOption('build-xml'),
-                $tests,
-                $groups,
                 $input->getArgument('phpunit-binary'),
                 $input->getArgument('phpunit-xml')
             );
@@ -108,8 +93,6 @@ class Command extends AbstractCommand
 
             $writer->write(
                 $input->getOption('makefile'),
-                $tests,
-                $groups,
                 $input->getArgument('phpunit-binary'),
                 $input->getArgument('phpunit-xml')
             );
