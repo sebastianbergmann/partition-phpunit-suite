@@ -20,7 +20,8 @@ class Application extends AbstractApplication
 {
     public function __construct()
     {
-        $version = new Version('1.0', \dirname(\dirname(__DIR__)));
+        $version = new Version('1.0', \dirname(__DIR__, 2));
+
         parent::__construct('partition-phpunit-suite', $version->getVersion());
     }
 

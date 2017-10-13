@@ -13,9 +13,9 @@ namespace SebastianBergmann\PartitionPhpunitSuite;
 final class BuildXmlWriter
 {
     /**
-     * @param string   $filename
-     * @param string   $phpunitBinary
-     * @param string   $phpunitXml
+     * @param string $filename
+     * @param string $phpunitBinary
+     * @param string $phpunitXml
      */
     public function write(string $filename, string $phpunitBinary, string $phpunitXml): void
     {
