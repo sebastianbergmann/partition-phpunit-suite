@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<tests>
+ <testCaseClass name="SebastianBergmann\Money\CurrencyTest">
+  <testCaseMethod name="testExceptionIsRaisedForInvalidConstructorArgument" groups="default"/>
+  <testCaseMethod name="testCanBeConstructedFromUppercaseString" groups="default"/>
+  <testCaseMethod name="testCanBeConstructedFromLowercaseString" groups="default"/>
+  <testCaseMethod name="testCustomCurrencyCanBeRegistered" groups="default"/>
+  <testCaseMethod name="testRegisteredCurrenciesCanBeAccessed" groups="default"/>
+  <testCaseMethod name="testCanBeCastToString" groups="default"/>
+  <testCaseMethod name="testCurrencyCodeCanBeRetrieved" groups="default"/>
+  <testCaseMethod name="testDefaultFractionDigitsCanBeRetrieved" groups="default"/>
+  <testCaseMethod name="testDisplayNameCanBeRetrieved" groups="default"/>
+  <testCaseMethod name="testNumericCodeCanBeRetrieved" groups="default"/>
+  <testCaseMethod name="testSubUnitCanBeRetrieved" groups="default"/>
+ </testCaseClass>
+ <testCaseClass name="SebastianBergmann\Money\IntlFormatterTest">
+  <testCaseMethod name="testMoneyObjectCanBeFormattedAsString" groups="default"/>
+ </testCaseClass>
+ <testCaseClass name="SebastianBergmann\Money\MoneyTest">
+  <testCaseMethod name="testExceptionIsRaisedForInvalidConstructorArguments" groups="default"/>
+  <testCaseMethod name="testExceptionIsRaisedForInvalidConstructorArguments2" groups="default"/>
+  <testCaseMethod name="testExceptionIsRaisedForInvalidConstructorArguments3" groups="default"/>
+  <testCaseMethod name="testObjectCanBeConstructedForValidConstructorArguments" groups="default"/>
+  <testCaseMethod name="testObjectCanBeConstructedForValidConstructorArguments2" groups="default"/>
+  <testCaseMethod name="testObjectCanBeConstructedFromStringValue" groups="default"/>
+  <testCaseMethod name="testObjectCanBeConstructedFromStringValue2" groups="default"/>
+  <testCaseMethod name="testAmountCanBeRetrieved" groups="default"/>
+  <testCaseMethod name="testConvertedAmountCanBeRetrieved" groups="default"/>
+  <testCaseMethod name="testCurrencyCanBeRetrieved" groups="default"/>
+  <testCaseMethod name="testAnotherMoneyObjectWithSameCurrencyCanBeAdded" groups="default"/>
+  <testCaseMethod name="testExceptionIsThrownForOverflowingAddition" groups="default"/>
+  <testCaseMethod name="testExceptionIsRaisedForIntegerOverflow" groups="default"/>
+  <testCaseMethod name="testExceptionIsRaisedWhenMoneyObjectWithDifferentCurrencyIsAdded" groups="default"/>
+  <testCaseMethod name="testAnotherMoneyObjectWithSameCurrencyCanBeSubtracted" groups="default"/>
+  <testCaseMethod name="testExceptionIsThrownForOverflowingSubtraction" groups="default"/>
+  <testCaseMethod name="testExceptionIsRaisedWhenMoneyObjectWithDifferentCurrencyIsSubtracted" groups="default"/>
+  <testCaseMethod name="testCanBeNegated" groups="default"/>
+  <testCaseMethod name="testCanBeMultipliedByAFactor" groups="default"/>
+  <testCaseMethod name="testExceptionIsRaisedWhenMultipliedUsingInvalidRoundingMode" groups="default"/>
+  <testCaseMethod name="testCanBeAllocatedToNumberOfTargets" groups="default"/>
+  <testCaseMethod name="testPercentageCanBeExtracted" groups="default"/>
+  <testCaseMethod name="testExceptionIsRaisedWhenTryingToAllocateToInvalidNumberOfTargets" groups="default"/>
+  <testCaseMethod name="testCanBeAllocatedByRatios" groups="default"/>
+  <testCaseMethod name="testCanBeComparedToAnotherMoneyObjectWithSameCurrency" groups="default"/>
+  <testCaseMethod name="testCanBeComparedToAnotherMoneyObjectWithSameCurrency2" groups="default"/>
+  <testCaseMethod name="testCanBeComparedToAnotherMoneyObjectWithSameCurrency3" groups="default"/>
+  <testCaseMethod name="testCanBeComparedToAnotherMoneyObjectWithSameCurrency4" groups="default"/>
+  <testCaseMethod name="testCanBeComparedToAnotherMoneyObjectWithSameCurrency5" groups="default"/>
+  <testCaseMethod name="testCanBeComparedToAnotherMoneyObjectWithSameCurrency6" groups="default"/>
+  <testCaseMethod name="testExceptionIsRaisedWhenComparedToMoneyObjectWithDifferentCurrency" groups="default"/>
+  <testCaseMethod name="testCanBeSerializedToJson" groups="default"/>
+ </testCaseClass>
+</tests>

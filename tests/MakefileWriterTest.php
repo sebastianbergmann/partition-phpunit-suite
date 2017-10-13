@@ -26,29 +26,17 @@ final class MakefileWriterTest extends TestCase
      */
     private $root;
 
-    /**
-     * @var string[]
-     */
-    private $tests;
-
-    /**
-     * @var string[]
-     */
-    private $groups;
-
     protected function setUp()
     {
         $this->writer = new MakefileWriter;
         $this->root   = vfsStream::setup();
-        $this->tests  = \file(__DIR__ . '/_fixture/tests.txt');
-        $this->groups = \file(__DIR__ . '/_fixture/groups.txt');
     }
 
     public function testWritesMakefileCorrectly(): void
     {
-        $actual = vfsStream::url('root') . '/build.xml';
+        $actual = vfsStream::url('root') . '/Makefile';
 
-        $this->writer->write($actual, $this->tests, $this->groups, 'phpunit', 'phpunit.xml');
+        $this->writer->write($actual, 'phpunit', 'phpunit.xml');
 
         $this->assertFileEquals(__DIR__ . '/_expectation/Makefile', $actual);
     }

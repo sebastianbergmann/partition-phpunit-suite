@@ -30,17 +30,16 @@ You can then invoke it using the `vendor/bin/partition-phpunit-suite` executable
 
 ## Usage
 
-### Write list of tests and test groups to temporary files
+### Write list of tests to temporary file
 
-    $ phpunit --list-tests-raw > /tmp/tests.txt
-    $ phpunit --list-groups-raw > /tmp/groups.txt
+    $ phpunit --list-tests-xml /tmp/tests.xml
 
 ### Generate build script
 
 #### `build.xml` (for use with Apache Ant)
 
-    $ partition-phpunit-suite --build-xml=build.xml /tmp/tests.txt /tmp/groups.txt
+    $ partition-phpunit-suite --build-xml=build.xml /tmp/tests.xml
 
 #### `Makefile` (for use with GNU make)
 
-    $ partition-phpunit-suite --makefile=Makefile /tmp/tests.txt /tmp/groups.txt
+    $ partition-phpunit-suite --makefile=Makefile /tmp/tests.xml

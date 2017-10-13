@@ -14,12 +14,10 @@ final class MakefileWriter
 {
     /**
      * @param string   $filename
-     * @param string[] $tests
-     * @param string[] $groups
      * @param string   $phpunitBinary
      * @param string   $phpunitXml
      */
-    public function write(string $filename, array $tests, array $groups, string $phpunitBinary, string $phpunitXml): void
+    public function write(string $filename, string $phpunitBinary, string $phpunitXml): void
     {
         $buffer = '';
 
